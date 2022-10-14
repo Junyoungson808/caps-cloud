@@ -27,7 +27,7 @@ async function confirmDelivery(data) {
     id: 'testId',
     body: stringifiedMessage,
     groupId: 'group1234',
-    deduplicationId: chance.guid(), // typically a hash of the message body
+    deduplicationId: chance.guid(),
   };
 
   try {
@@ -39,7 +39,7 @@ async function confirmDelivery(data) {
 }
 
 const app = Consumer.create({
-  queueUrl: 'https://sqs.us-west-2.amazonaws.com/822448088818/jgs-delivered', //RYAN
+  queueUrl: 'https://sqs.us-west-2.amazonaws.com/822448088818/jgs-delivered',
   handleMessage: confirmDelivery,
 });
 

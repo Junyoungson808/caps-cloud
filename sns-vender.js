@@ -9,7 +9,7 @@ const message = process.argv[2];
 
 const sns = new AWS.SNS();
 
-const topic = 'arn:aws:lambda:us-west-2:822448088818:function:jgs-sns-receiver'; // MINE JGS
+const topic = 'arn:aws:lambda:us-west-2:822448088818:function:jgs-sns-receiver';
 
 const payload = {
   Message: message,
@@ -21,7 +21,7 @@ sns.publish(payload).promise()
   .catch(err => console.log(err));
 
 const app = Consumer.create({
-  queueUrl: 'https://sqs.us-west-2.amazonaws.com/822448088818/jgs-sqs-delivery-confirmation.fifo', //RYANS
+  queueUrl: 'https://sqs.us-west-2.amazonaws.com/822448088818/jgs-sqs-delivery-confirmation.fifo',
   handleMessage: (data) => {
     let body = JSON.parse(data.Body);
     console.log('message Received: ', body);
