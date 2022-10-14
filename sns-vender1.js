@@ -22,7 +22,7 @@ setInterval(() => {
   const payload = {
     Message: messageString,
     TopicArn: topic,
-    MessageGroupId: 'vendor1',
+    MessageGroupId: 'vendor1----Flower Shop',
     MessageDeduplicationId: chance.guid(),
   };
 
