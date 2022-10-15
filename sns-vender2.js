@@ -22,7 +22,7 @@ setInterval(() => {
   const payload = {
     Message: messageString,
     TopicArn: topic,
-    MessageGroupId: 'vendor2----Acme Widgets',
+    MessageGroupId: 'vendor2',
     MessageDeduplicationId: chance.guid(),
   };
 
